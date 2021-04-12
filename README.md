@@ -1,3 +1,3 @@
 # SRT_inSync
 
-Command line tool for checking if subtitles are in sync
+Command line utility for checking if two subtitle files are in sync
