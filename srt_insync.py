@@ -4,10 +4,15 @@ from pysrt import SubRipFile, SubRipItem, open
 from datetime import time, timedelta
 from typing import List
 
+PROJECT_NAME = 'SRT_inSync'
+VERSION = '1.0.0'
+
 parser = argparse.ArgumentParser(description='Command line utility for checking if two subtitle files are in sync')
+parser.add_argument('-v', '--version', action='version', version=PROJECT_NAME + ' ' + VERSION)
+
 parser.add_argument('paths', metavar='PATH', type=str, nargs=2, help='path to subtitle file')
-parser.add_argument('--verbose', '-v', help='verbose mode', action='store_true')
-parser.add_argument('--diff', '-d', dest='diff', type=float, help='diff tolerance in seconds', default=2.5)
+parser.add_argument('--verbose', help='verbose mode', action='store_true')
+parser.add_argument('-d', '--diff', dest='diff', type=float, help='diff tolerance in seconds', default=2.5)
 
 args = parser.parse_args()
 
